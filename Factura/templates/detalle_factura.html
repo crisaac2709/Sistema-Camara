@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/factura.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+<div class="container">
+    <h2>Factura</h2>
+    <table class="factura-table">
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre/Modelo</th>
+            <th>Marca</th>
+            <th>Resolución</th>
+            <th>Precio Unitario</th>
+            <th>Cantidad</th>
+            <th>Precio Total</th>
+        </tr>
+        {% for item in facturas %}
+        <tr>
+            <td><img src="{{ item.camara.camara.url }}" alt="{{ item.camara.nombre }}" width="100"></td>
+            <td>{{ item.camara.nombre }}</td>
+            <td>{{ item.camara.marca }}</td>
+            <td>{{ item.camara.resolucion }}p</td>
+            <td>${{ item.precio_unitario }}</td>
+            <td>{{ item.cantidad }}</td>
+            <td>${{ item.precio_total }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="total">
+        Total: ${{ total }}
+    </div>
+
+    <!-- Botón de PayPal -->
+    <div id="paypal-button-container" class="paypal-button-container"></div>
+</div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=AfH294TCPJPfX2p-KM_uPVqJ9c3Ha0VTczvnQCj5lkZcLTTB-izx4dsP1GOJz7d7DmHjBZRKfk0l5LRy&currency=USD"></script>
+<script src="{% static 'js/paypal-button.js' %}"></script>
+</body>
+</html>

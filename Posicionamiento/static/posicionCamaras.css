@@ -1,0 +1,92 @@
+:root {
+    --blanco-perla: #FBFCF8;
+    --gris: #E5ECE9;
+    --naranja-oscuro: #D33A1A; /* Le faltaba el "#" en la declaración de color */
+    --texto: #3e3e3e;
+    --naranja: #ff5900;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helveticas Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #333;
+}
+
+.imagen-navbar {
+    position: relative; /* Necesario para el posicionamiento absoluto */
+    height: 56px; /* Altura igual a la del navbar */
+    overflow: hidden; /* Recorta cualquier contenido que se desborde */
+}
+
+.hero {
+    position: absolute; /* Posiciona la imagen de fondo */
+    top: 0; /* Alinea la parte superior de la imagen con la parte superior del contenedor */
+    left: 50%; /* Alinea horizontalmente al centro */
+    width: 100%; /* Mantiene la proporción de la imagen */
+    height: auto; /* Mantiene la altura de la imagen según su proporción */
+    transform: translateX(-50%); /* Centra la imagen en el contenedor */
+}
+body {
+    margin: 0;
+    display: flex;              /* Habilita el uso de flexbox */
+    justify-content: center;    /* Centra horizontalmente */
+    align-items: center;        /* Centra verticalmente */
+    height: 100vh;             /* Ajusta la altura del contenedor principal */
+    background-color: #f0f0f0; /* Color de fondo opcional */
+}
+
+.contenedor_resultado {
+    margin: 0;
+    display: flex; /* Utiliza flexbox para facilitar la alineación */
+    flex-direction: column; /* Alinea los elementos en una columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    height: 80%; /* Establece la altura del contenedor en el 100% de la ventana */
+    width: 90%;
+    background: var(--gris);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor_resultado img {
+    max-width: 100%; /* Asegúrate de que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+}
+
+.btn-imprimir {
+    margin-top: 1.5rem;
+    border-width: 0;
+    font-size: 17px;
+    padding: 10px; /* Ajusté el padding para mayor altura del botón */
+    background-color: var(--naranja);
+    color: white;
+    border-radius: 15px;
+    border-color: var(--naranja);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-imprimir:hover{
+    background-color: var(--naranja-oscuro); /* Asegúrate de definir var(--naranja-oscuro) */
+    border-color: var(--naranja-oscuro);
+}
+
+.btn-comprar {
+    margin-top: 1.5rem;
+    border-width: 0;
+    font-size: 17px;
+    padding: 10px; /* Ajusté el padding para mayor altura del botón */
+    background-color: rgb(26, 146, 26);
+    color: white;
+    border-radius: 15px;
+    border-color: rgb(26, 146, 26);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-comprar:hover{
+    background-color: rgb(19, 98, 19); /* Asegúrate de definir var(--naranja-oscuro) */
+    border-color: rgb(19, 98, 19);
+}
